@@ -18,7 +18,7 @@ The basic idea seems to work, but there are some issues:
 - This code was written with the help of AI, so it's probably full of bugs.
 - The broadcasterManager does not have any code for handling the case where the referenced broadcaster is evicted. This should not be an issue though, as Cloudflare claims to automatically create a new Durable Object if the previous one with the same ID is evicted.
 
-> I stopped working on this project as soon as I became aware of how Cloudflare bills Durable Objects and WebSockets. Some napkin math suggests that this would cost around $15 per month to sustain a lobby with 30 clients. It doesn't make sense to use this in an attempt to save money, as using that money to buy a more powerful server would provide better value.
+> I stopped working on this project as soon as I became aware of how Cloudflare bills Durable Objects and WebSockets. Some napkin math suggests that this would cost around $15 per month to sustain a lobby with 30 clients and 2 messages / s. It doesn't make sense to use this in an attempt to save money, as using that money to buy a more powerful server would provide better value.
 
 ## How to Use
 
