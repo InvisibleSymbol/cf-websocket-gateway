@@ -1,0 +1,24 @@
+name = "websocket-gateway"
+main = "src/index.mjs"
+compatibility_date = "2023-03-17"
+
+[vars]
+ORIGIN_URL = "ws://localhost:3001"
+
+[durable_objects]
+bindings = [
+  { name = "BROADCASTER_NAMESPACE", class_name = "Broadcaster" },
+  { name = "BROADCASTER_MANAGER_NAMESPACE", class_name = "BroadcasterManager" },
+]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["Broadcaster", "BroadcasterManager"]
+
+[[durable_objects.classes]]
+name = "Broadcaster"
+script_name = "broadcaster"
+
+[[durable_objects.classes]]
+name = "BroadcasterManager"
+script_name = "broadcasterManager"
